@@ -51,7 +51,7 @@ var App = {
 
 			return $.ajax({
 				dataType : 'json',
-				url: 'http://github.dev/backbone-php-mysql/server/addNewContact.php',
+				url: 'http://github.dev/backbone-php-mysql/server/add.php',
 				data:{
 					id: (this.get('id') || ''),
 					full_name: (this.get('full_name') || ''),
