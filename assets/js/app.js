@@ -51,7 +51,7 @@ var App = {
 
 			return $.ajax({
 				dataType : 'json',
-				url: 'http://bkbone.com/hard/server/addNewContact.php',
+				url: 'http://github.dev/backbone-php-mysql/server/addNewContact.php',
 				data:{
 					id: (this.get('id') || ''),
 					full_name: (this.get('full_name') || ''),
@@ -93,7 +93,7 @@ var App = {
 
 			var id = this.get('id');
 
-			return $.getJSON('http://bkbone.com/hard/server/deleteContact.php',
+			return $.getJSON('http://github.dev/backbone-php-mysql/server/delete.php',
 				{ id : id },
 				function(data){ 
 
@@ -116,7 +116,7 @@ var App = {
 
 App.contactCollection = Backbone.Collection.extend({
 	model : App.ContactModel,
-	url: 'http://bkbone.com/hard/server/listContact.php'
+	url: 'http://github.dev/backbone-php-mysql/server/list.php'
 });
 
 
@@ -275,12 +275,12 @@ App.addView = Backbone.View.extend({
 		App.listview.render({});
 	},
 	searchContacts: function(event){ 
-		var full_name = $('#inName').val(),
-		    email = $('#inEmail').val();
+		var full_name = $('#inName').val();
+
 
 
 		App.listview.setElement('#gridd');
-		App.listview.listPage({ full_name : full_name, email:email });
+		App.listview.listPage({ full_name : full_name });
 		return false;
 	}
 });
