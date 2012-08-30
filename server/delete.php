@@ -22,3 +22,5 @@
 	    	 'msg' => 'Something wrong '
 	    ));
 	 }
+
+	 ?>
