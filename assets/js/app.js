@@ -51,7 +51,7 @@ var App = {
 
 			return $.ajax({
 				dataType : 'json',
-				url: 'http://github.dev/backbone-php-mysql/server/add.php',
+				url: '../server/add.php',
 				data:{
 					id: (this.get('id') || ''),
 					full_name: (this.get('full_name') || ''),
@@ -93,7 +93,7 @@ var App = {
 
 			var id = this.get('id');
 
-			return $.getJSON('http://github.dev/backbone-php-mysql/server/delete.php',
+			return $.getJSON('../server/delete.php',
 				{ id : id },
 				function(data){ 
 
@@ -116,7 +116,7 @@ var App = {
 
 App.contactCollection = Backbone.Collection.extend({
 	model : App.ContactModel,
-	url: 'http://github.dev/backbone-php-mysql/server/list.php'
+	url: '../server/list.php'
 });
 
 
